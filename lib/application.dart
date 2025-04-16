@@ -1,5 +1,6 @@
-import 'package:anjuke/pages/home/index.dart';
 import 'package:anjuke/pages/login.dart';
+import 'package:anjuke/routes.dart';
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 
 class Application extends StatelessWidget {
@@ -7,6 +8,16 @@ class Application extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: LoginPage());
+    final router = FluroRouter();
+    Routes.configureRoutes(router);
+    return MaterialApp(
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.cyanAccent,
+          brightness: Brightness.light,
+        ),
+      ),
+      onGenerateRoute: router.generator,
+    );
   }
 }
