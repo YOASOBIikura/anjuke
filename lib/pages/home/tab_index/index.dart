@@ -1,3 +1,4 @@
+import 'package:anjuke/pages/home/info/index.dart';
 import 'package:anjuke/pages/home/tab_index/index_navigator.dart';
 import 'package:anjuke/pages/home/tab_index/index_recommend.dart';
 import 'package:anjuke/widgets/common_swipper.dart';
@@ -18,6 +19,7 @@ class TabIndex extends StatelessWidget {
           CommonSwipper(),
           IndexNavigator(),
           IndexRecommend(),
+          Info(),
           Text('这里是内容区域'),
         ],
       ),

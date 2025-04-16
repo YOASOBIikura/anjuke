@@ -5,7 +5,7 @@ class InfoItem {
   final String time;
   final String navigationUri;
 
-  InfoItem({
+  const InfoItem({
     required this.title,
     required this.imgUri,
     required this.source,
@@ -14,7 +14,7 @@ class InfoItem {
   });
 }
 
-List<InfoItem> infoData = [
+const List<InfoItem> infoData = [
   InfoItem(
     title: '置业选择 | 安贞西里 三室一厅 河间的古雅别院',
     imgUri: 'assets/img/12.jpg',

@@ -1,4 +1,5 @@
 import "package:anjuke/pages/home/tab_index/index.dart";
+import "package:anjuke/pages/home/tab_info/index.dart";
 import "package:anjuke/routes.dart";
 import "package:flutter/material.dart";
 
@@ -6,7 +7,7 @@ import "package:flutter/material.dart";
 List<Widget> tabViewList = [
   TabIndex(),
   PageContent(name: '搜索'),
-  PageContent(name: '资讯'),
+  TabInfo(),
   PageContent(name: '我的'),
 ];
 
