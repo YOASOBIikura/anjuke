@@ -2,6 +2,7 @@ import 'package:anjuke/pages/home/info/index.dart';
 import 'package:anjuke/pages/home/tab_index/index_navigator.dart';
 import 'package:anjuke/pages/home/tab_index/index_recommend.dart';
 import 'package:anjuke/widgets/common_swipper.dart';
+import 'package:anjuke/widgets/search_bar/index.dart';
 import 'package:flutter/material.dart';
 
 class TabIndex extends StatelessWidget {
@@ -11,8 +12,8 @@ class TabIndex extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('tabIndex'),
-        backgroundColor: Colors.cyanAccent,
+        title: MySearchBar(showLocation: true),
+        backgroundColor: Colors.white,
       ),
       body: ListView(
         children: [
