@@ -1,5 +1,6 @@
 import 'package:anjuke/pages/home/tab_search/data_list.dart';
 import 'package:anjuke/widgets/room_list_item_widget.dart';
+import 'package:anjuke/widgets/search_bar/index.dart';
 import 'package:flutter/material.dart';
 
 class TabSearch extends StatefulWidget {
@@ -14,8 +15,8 @@ class _TabSearchState extends State<TabSearch> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('tabSearch'),
-        backgroundColor: Colors.cyanAccent,
+        title: MySearchBar(),
+        backgroundColor: Colors.white,
       ),
       body: Column(
         children: [

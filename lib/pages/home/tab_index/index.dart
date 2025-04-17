@@ -12,7 +12,10 @@ class TabIndex extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: MySearchBar(showLocation: true),
+        title: MySearchBar(
+          showLocation: true,
+          showMap: true,
+        ),
         backgroundColor: Colors.white,
       ),
       body: ListView(
