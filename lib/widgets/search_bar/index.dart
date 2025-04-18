@@ -29,21 +29,23 @@ class MySearchBar extends StatefulWidget {
 class _SearchBarState extends State<MySearchBar> {
   String _searchWord = '';
   TextEditingController? _controller;
-  FocusNode _focus;
-  _onClean(){
-    _controller!. clear();
+  FocusNode? _focus;
+  _onClean() {
+    _controller!.clear();
+    _focus!.unfocus();
     setState(() {
       _searchWord = '';
     });
-  } 
+  }
 
   @override
   void initState() {
     // TODO: implement initState
-    _controller = TextEditingController(text:  widget.inputValue);
+    _controller = TextEditingController(text: widget.inputValue);
     _focus = FocusNode();
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -84,9 +86,9 @@ class _SearchBarState extends State<MySearchBar> {
               margin: EdgeInsets.only(right: 5),
               child: TextField(
                 focusNode: _focus,
-                onTap: (){
-                  if(widget.onSearchSubmit == null){
-                    _focus.unfocus();
+                onTap: () {
+                  if (widget.onSearchSubmit == null) {
+                    _focus!.unfocus();
                   }
                   widget.onSearch!();
                 },
@@ -107,9 +109,13 @@ class _SearchBarState extends State<MySearchBar> {
                   suffixIcon: GestureDetector(
                     onTap: () {
                       _onClean();
-                    } ,
-                    child: Icon(Icons.clear, size: 18, 
-                    color: _searchWord == ''? Colors.grey[200]:Colors.grey)),
+                    },
+                    child: Icon(
+                      Icons.clear,
+                      size: 18,
+                      color: _searchWord == '' ? Colors.grey[200] : Colors.grey,
+                    ),
+                  ),
                   icon: Padding(
                     padding: EdgeInsets.only(top: 1, left: 5),
                     child: Icon(Icons.search, size: 18.0, color: Colors.grey),
