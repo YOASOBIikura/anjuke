@@ -1,3 +1,4 @@
+import 'package:anjuke/pages/home/tab_profile/header.dart';
 import 'package:flutter/material.dart';
 
 class TabProfile extends StatelessWidget {
@@ -17,7 +18,10 @@ class TabProfile extends StatelessWidget {
           ),
         ],
       ),
-      body: ListView(children: [Text('这里是内容区')]),
+      body: ListView(children: [
+        Header(),
+        Text('这里是内容区')
+        ]),
     );
   }
 }
