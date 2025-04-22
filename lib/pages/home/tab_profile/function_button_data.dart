@@ -22,7 +22,9 @@ List<FunctionButtonDataItem> list = [
   FunctionButtonDataItem(
     imageUrl: 'assets/img/18.png',
     title: '我的订单',
-    onTabHandle: null,
+    onTabHandle: (context){
+      return Navigator.of(context).pushNamed(Routes.roomAdd);
+    },
   ),
   FunctionButtonDataItem(
     imageUrl: 'assets/img/19.png',

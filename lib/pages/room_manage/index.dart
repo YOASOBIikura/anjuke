@@ -26,7 +26,6 @@ class _RoomManageState extends State<RoomManage> with SingleTickerProviderStateM
     _tabController = TabController(length: myTabs.length, vsync: this);
   }
 
-
   @override
   void dispose(){
     if(_tabController != Null){
@@ -47,7 +46,8 @@ class _RoomManageState extends State<RoomManage> with SingleTickerProviderStateM
       ),
       body: TabBarView(
         controller: _tabController,
-        children: myTabs.map((Tab tab)=> Info(isShow: false)).toList()),
+        children: myTabs.map((Tab tab)=> Info(isShow: false)).toList()
+      ),
     );
   }
 }
