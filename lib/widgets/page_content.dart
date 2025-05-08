@@ -2,11 +2,17 @@ import "package:anjuke/pages/home/tab_index/index.dart";
 import "package:anjuke/pages/home/tab_info/index.dart";
 import "package:anjuke/pages/home/tab_profile/index.dart";
 import "package:anjuke/pages/home/tab_search/index.dart";
+import "package:anjuke/pages/home/tab_test/transition.dart";
 import "package:anjuke/routes.dart";
 import "package:flutter/material.dart";
 
+import "../pages/home/tab_test/hero.dart";
+import "../pages/home/tab_test/index.dart";
+import "../pages/home/tab_test/sequence/index.dart";
+import "../pages/home/tab_test/sequence/sequence.dart";
+
 // tab内容区
-List<Widget> tabViewList = [TabIndex(), TabSearch(), TabInfo(), TabProfile()];
+List<Widget> tabViewList = [TabIndex(), AnimatedWidgetsTest(), TabInfo(), TabProfile()];
 
 // tabItem
 List<BottomNavigationBarItem> barItemList = [
@@ -30,11 +36,14 @@ class PageContent extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, Routes.home);
-            },
-            child: Text(Routes.home),
+          Container(
+            padding: EdgeInsets.only(top: 50),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, Routes.home);
+              },
+              child: Text(Routes.home),
+            ),
           ),
           ElevatedButton(
             onPressed: () {

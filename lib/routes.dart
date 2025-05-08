@@ -6,6 +6,7 @@ import 'package:anjuke/pages/room_add/index.dart';
 import 'package:anjuke/pages/room_detail/index.dart';
 import 'package:anjuke/pages/room_manage/index.dart';
 import 'package:anjuke/pages/setting.dart';
+import 'package:anjuke/pages/testHero.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +19,7 @@ class Routes {
   static String setting = "/setting";
   static String roomManage = "/roomManage";
   static String roomAdd = "/roomAdd";
+  static String testHero = "/testHero";
 
   // 定义路由处理函数
   static var _homeHandler = Handler(handlerFunc: handlerHomePageFunc);
@@ -30,6 +32,7 @@ class Routes {
   static var _settingHandler = Handler(handlerFunc: handlerSettingPageFunc);
   static var _roomManageHandler = Handler(handlerFunc: handlerRoomManagePageFunc);
   static var _roomAdd = Handler(handlerFunc: handlerRoomAddPageFunc);
+  static var _testHero = Handler(handlerFunc: handleTestHeroFunc);
 
 
   static Widget? handlerHomePageFunc(
@@ -88,6 +91,13 @@ class Routes {
     return RoomAdd();
   }
 
+  static Widget? handleTestHeroFunc(
+    BuildContext? context,
+    Map<String, List<String>> parameters,
+  ){
+    return HeroAnimationRouteB();
+  }
+
   // 关联路由名称和处理函数
   static void configureRoutes(FluroRouter router) {
     router.define(home, handler: _homeHandler);
@@ -97,6 +107,7 @@ class Routes {
     router.define(setting, handler: _settingHandler);
     router.define(roomManage, handler: _roomManageHandler);
     router.define(roomAdd, handler: _roomAdd);
+    router.define(testHero, handler: _testHero);
     router.notFoundHandler = _notFoundHandler;
   }
 }
